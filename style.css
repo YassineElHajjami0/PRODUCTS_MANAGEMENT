@@ -1,0 +1,786 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+:root {
+    --firstColor : #335bf4;
+    --secondColor : #2ae9c9;
+}
+body {
+    scroll-behavior: smooth;
+    color:  white;
+    font-family: 'Comfortaa', cursive;
+    background-color: black;
+    overflow: hidden;
+    height: 100vh;
+}
+.container{
+    scroll-behavior: smooth;
+    padding: 0 250px;
+    height: 100vh;
+    z-index: 1;
+    overflow-y: scroll;
+
+}
+@media (max-width: 1400px){
+    .container{
+        padding: 0 100px;
+    }
+}
+@media (max-width: 1000px){
+    .container{
+        padding: 0 50px;
+    }
+}
+
+.cubes {
+    background: url(./Images/Hexagon.svg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size:350px;
+    z-index: -1;
+}
+.cube {
+    width: 150px;
+    height:150px;
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translate(-50%,-50%);
+/*     background: linear-gradient(90deg,#1645ff,#00b37d);*/   
+    background-color: #b700ff;
+    filter: blur(20px);
+    z-index: -100;
+    transition: 0.3s;
+
+}
+
+.container .header  {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .header div {
+    display: flex;
+justify-content: center;
+align-items: center;
+}
+.container .header h1 {
+    font-family: 'Bangers', cursive;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 70px;
+    transition: 0.2s;
+}
+.container .header h1 img {
+    width: 70px;
+}
+
+.container .header h1.space{
+    line-height: 1.6;
+}
+@keyframes updown {
+    0%,100% 
+    {
+        transform: scale(1,1);
+    }
+    40%
+    {
+        transform: scale(1.5,0.5);
+    }
+    50% 
+    {
+        transform: scale(0.5,1.5);
+    }
+    60% 
+    {
+        transform: scale(1.2,0.7);
+    }
+    70% 
+    {
+        transform: scale(0.7,1.2);
+    }
+    80% 
+    {
+        transform: scale(1.1,0.9);
+    }
+    
+}
+/*---------------inputs----------*/
+input{
+    width: 100%;
+    padding: 7px;
+    font-size: 20px;
+    background-color:transparent;
+    border: none;
+    margin-bottom: 16px;
+    color: white;
+    border-radius: 5px;
+}
+input::placeholder{
+    color: aliceblue;
+}
+input:focus{
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.107);
+    outline: none;
+    transform: scale(1.1);
+}
+.prices {
+/*     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.prices span {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: rgba(95, 95, 95, 0.323);
+    padding: 5px;
+    border-radius: 5px;
+}
+.prices span::before {
+    content: "Total: ";
+}
+.prices input  {
+    width: 150px;
+    position: relative;
+}
+.inputs #create {
+    height: 54.8px;
+    position: relative;
+    z-index: 1;
+}
+.inputs #create::before {
+    content: '';
+    position: absolute;
+    left: -55px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color:transparent;
+    filter: blur(5px);
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+    z-index: -1;
+
+}
+.inputs #create::after {
+    content: '';
+    position: absolute;
+    right: -55px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    filter: blur(5px);
+    border-radius: 50%;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+
+
+}
+.inputs #create:hover::before{
+    left: 0;
+    top: 0;
+    background-color: rgb(144, 0, 255);
+
+    transform: none;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    filter: none;
+}
+.inputs #create:hover::after{
+    right: 0;
+    top: 0;
+    transform: none;
+    background-color: rgb(144, 0, 255);
+
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    filter: none;
+}
+
+.inputs .prices input[type="number"]::before {
+    content:"";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 2px;
+    background-color: #fff;
+}
+@media (max-width: 719px){
+    .container .header h1 {
+        font-size: 45px;
+    }
+    .container .header h1 img {
+        width: 40px;
+    }
+    
+}
+@media (max-width: 523px){
+    .container .header {
+        margin: 5px;
+    }
+    .container .header h1 {
+        font-size: 30px;
+        
+    }
+    .container {
+        padding: 0 22px;
+    }
+    .inputs input{
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+    .inputs input:focus {
+        transform: none;
+    }
+    .outputs .searchBy button {
+        height: 55px;
+    }
+    .prices span {
+        font-size: 16px;
+        display: block;
+        margin: 0 auto 5px;
+    }
+    #create , .outputs #search , .outputs #sbCategory,.outputs #sbTitle, #deleteAll{
+        font-size: 16px;
+    }
+    .cubes , .cube{
+        display: none;
+    }
+    body {
+        background-color: #923cb5;
+        background-image: linear-gradient(147deg, #7c319a 0%, #000000 74%);
+    }
+}
+@media (max-width: 470px){
+    .container .cube {
+        display: none;  
+    }
+}
+.inputs button {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    letter-spacing: 1.5px;
+
+    background-color: rgba(64, 64, 64, 0.505);
+}
+.inputs button:hover {
+    background-color:  rgba(64, 64, 64, 0.842);
+    letter-spacing: 2px;
+
+}
+/* 
+#price{
+    position: relative;
+}
+#price::before {
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:12px;
+    background-color:rgb(110, 48, 48);
+    z-index:3;
+} 
+*/
+.inputs .title{
+    position: relative;
+}
+.inputs .title::before {
+    position: absolute;
+    width: 100px;
+    height: 5px;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}
+/*--------outputs--*/
+.outputs #search {
+    margin-top: 10px;
+}
+.searchBy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+}
+.searchBy button {
+    height: 54.8px;
+    flex-grow: 1;
+    padding: 5px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    background-color: rgba(64, 64, 64, 0.505);
+    color: white;
+    letter-spacing: 1px;
+}
+.searchBy button:hover ,.outputs button:hover{
+    background-color:  rgba(64, 64, 64, 0.842);
+    letter-spacing: 1.4px;
+}
+.outputs button {
+    padding: 5px;
+    font-size: 18px;
+    letter-spacing: 1px;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    background-color: rgba(64, 64, 64, 0.505);
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+.outputs #deleteAll {
+    margin-bottom: 40px;
+    height: 54.8px;
+    position: relative;
+    overflow: hidden;
+}
+.outputs #deleteAll::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: -6px;
+    top: 0;
+    background-color: #7f0fac;
+    transform: skew(-15deg,0);
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+
+}
+.outputs #deleteAll::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    right: -6px;
+    top: 0;
+    background-color: #7f0fac;
+    transform: skew(-15deg,0);
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+}
+.outputs #deleteAll:hover {
+    background-color: transparent;
+}
+.outputs #deleteAll:hover::before , .outputs #deleteAll:hover::after{
+    width: 56%;
+}
+@media (max-width: 823px){
+    .outputs #deleteAll{
+        height: 40px;
+        margin-bottom: 50px;  
+    }
+    .searchBy button {
+        height: 40px;
+    }
+    .inputs #create {
+        height: 40px;
+    }
+}
+.outputs .tableContainer {
+    width: 100%;
+    overflow-x: scroll;
+    user-select: text;
+}
+.outputs table {
+    width: 100%;
+    text-align: center;
+}
+@media (max-width: 900px){
+    .outputs table {
+        width: 770px;
+    }
+}
+@media (max-width: 433px){
+    .outputs .searchBy button {
+        height: 55px;
+    }
+}
+.tableContainer table tbody tr td button {
+    letter-spacing: 1px;
+    height: 42.4px;
+    margin: 0;
+}
+table tr td button:hover
+{
+    transform: none;
+    letter-spacing: 1px;
+}
+table tr:hover
+{
+    background-color: rgba(133, 133, 133, 0.144);
+}
+.sticky 
+{
+    position: sticky;
+    top: 0;
+}
+.BYME 
+{
+    margin-top: 40px;
+    padding: 10px;
+    text-align: center;
+}
+table th, tr, td
+{
+    padding: 5px;
+}
+.scrolDiv 
+{
+    text-align: center;
+}
+.scrolDiv
+{
+    margin-bottom: 100px;
+} 
+.scrolDiv .scrollSpan
+{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 35px;
+    height: 55px;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 20px;
+    margin-bottom: 7px;
+}
+.scrolDiv .scrollSpan::before 
+{
+    position: absolute;
+    content: "";
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    border-radius: 4px;
+    height: 12px;
+    background-color: #fff;
+    animation: mouseScroll 1.5s infinite ease-in-out;
+}
+@keyframes mouseScroll 
+{
+    30%{
+        top:15px;
+    }
+}
+.noDataContainer , .submitContainer {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    transition: 0.5s ease-in-out;
+
+}
+.noData , .submitBox {
+    text-align: center;
+    position: absolute;
+    width: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #7e13a87b;
+    padding: 15px;
+    border-radius: 10px;
+    z-index: 10;
+}
+.noData p:first-child, .submitBox  p:first-child{
+    font-size: 80px;
+    font-weight: bold;
+}
+.submitBox  p:first-child {
+    transform: scaleY(0.8);
+}
+
+.noData p:last-of-type , .submitBox p:last-of-type{
+    color: rgb(211, 211, 211);
+    margin-bottom: 20px;
+}
+.noData button , .submitBox button  {
+    padding: 5px 10px;
+    border:none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    background-color: transparent;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.noData button:hover , .submitBox button:hover {
+    background-color: #fff;
+    color: #7e13a8;
+}
+
+.scrollToTop {
+    padding: 8px 5px;
+    position: fixed;
+    right: -40px;
+    bottom: 40px;
+    border-radius: 5px;
+    background-color: #7b319890;
+    z-index: 5;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.scrollToTop:hover {
+    background-color:#7b3198cc;
+}
+.scrollToTop.show {
+    right: 20px;
+}
+
+.reload{
+    text-align: center;
+    background-color: rgba(141, 141, 141, 0.255);
+    padding: 10px 40px 10px 20px;
+    width: fit-content;
+    margin: 0 auto 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+.reload:hover {
+    background-color:  rgba(85, 85, 85, 0.255);
+}
+.reload::before {
+    content:"";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid white;
+    border-right-color: transparent;
+}
+.reload::after {
+    content:"";
+    position: absolute;
+    right: 5px;
+    border: 6px solid white;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    z-index: 4;
+    transform: rotate(40deg);
+}
+.offline{
+    margin-top: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    z-index: 200;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.offline img {
+    width: 300px;
+}
+@media (max-width:350px) {
+    .offline img {
+        width: 200px;
+    }
+}
+.offline h1 {
+    margin: 20px 0;
+}
+.offline ul {
+    list-style: none;   
+}
+.offline ul li {
+    margin-bottom: 10px;
+    color: #777;
+}
+.offline.hide {
+    display: none;
+}
+.onlinee.hide {
+    display: none;
+}
+
+.btnMusic {
+    position: fixed;
+    z-index: 500;
+    padding: 0px 2px 0px 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.518);
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btnMusic:hover {
+    padding: 10px;
+    background-color: rgba(95, 95, 95, 0.582);
+}
+.emailContainer {
+    z-index: 200;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -100%;
+    left: 0;
+    transition: 0.3s;
+    transition-delay: 1s;
+}
+.emailContainer .emailBox {
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #8911b844;
+}
+.emailContainer .emailBox .face{
+    font-size: 60px;
+}
+/* .emailContainer .emailBox .face{
+    width: 150px;
+    height: 50px;
+    margin: 0 auto;
+    position: relative;
+}
+.emailContainer .emailBox .face::before{
+    content: "";
+    position: absolute;
+    width: 15px;
+    border-radius: 50%;
+    top: 30px;
+    left: 40px;
+    height: 15px;
+    background-color: #fff;
+
+}
+.emailContainer .emailBox .face::after{
+    content:"";
+    position: absolute;
+    width: 15px;
+    border-radius: 50%;
+    top: 30px;
+    height: 15px;
+    right: 40px;
+    background-color: #fff;
+
+}
+.emailContainer .emailBox .mouth {
+    width: 80px;
+    height: 80px;
+    border: 7px solid white;
+    margin: 20px auto 0;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    transform: rotateX(0deg);
+} */
+.emailContainer .emailBox p:last-of-type {
+    margin: 15px 0;
+}
+.emailContainer .emailBox button {
+    padding: 5px 15px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #731399;
+    letter-spacing: 1px;
+    font-size: 18px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.emailContainer .emailBox button:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.emailIcon {
+    position: fixed;
+    bottom: 5px;
+    right: 19px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.emailboxBorder {
+    position: absolute;
+    border: 1px solid #8911b8;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    left: 2px;
+    top: 0;
+    
+}
+.emailboxBorder::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    border: 10.4px solid #7b3198;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    transition: 0.3s;
+
+}
+.emailIcon:hover {
+    width: 30px;
+    height: 30px;
+}
+.emailIcon:hover .emailboxBorder::before {
+    border: 14.4px solid #7b3198;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+
+}

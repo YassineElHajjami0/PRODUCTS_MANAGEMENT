@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="Images/anotherTest.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,700&family=Cairo:wght@200;300;400;700;800;900&family=Comfortaa:wght@300;500;600;700&family=Pacifico&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,700&family=Bangers&family=Cairo:wght@200;300;400;700;800;900&family=Comfortaa:wght@300;500;600;700&family=Pacifico&display=swap" rel="stylesheet"> 
+    <title>PRODUCTS MANAGEMENT</title>
+</head>
+<body>
+    <div class="btnMusic">🎵</div>
+    <div class="emailIcon">
+        <div class="emailboxBorder"></div>
+    </div>
+    <audio  loop class="eminem" src="Songs/9convert.com - Eminem Till I Collapse Motivation video.mp3"></audio>
+    <div class="cubes"></div>
+    <div class="cube"></div>
+
+    <div class="offline">
+        <div class="offlineBox">
+        <img src="svg.svg" alt="">
+        <h1>Offline Now</h1>
+        <ul>
+            <li>Checking the connection</li>
+            <li>Checking the proxy and the firewall</li>
+            <li>Running Windows Network Diagnostics</li>
+
+        </ul>
+        </div>
+    </div>
+    <div class="onlinee">
+        <span class="scrollToTop">Up</span>
+    <div class="emailContainer" >
+        
+        <div class="emailBox">
+            <div class="face">
+                ☹️
+            </div> 
+<!-- 
+            <p class="face">
+            </p>
+            <div class="mouth"></div>
+ -->
+            <p class="email">yassineelhajjami610@gmail.com</p>
+            <button class="copyBtn">Copy</button>
+
+
+
+
+        </div>
+    </div>
+    <div class="submitContainer">
+        <div class="submitBox">
+            <p>X</p>
+            <p>Some fields cannot be empty !</p>
+            <button class="submitEmpty">OK</button>
+        </div>
+    </div>
+    <div class="noDataContainer">
+        <div class="noData">
+            <p>!</p>
+            <p>there is no data to delete!</p>
+            <button class="submitNOData">OK</button>
+        </div>
+    </div>
+    <div class="container">
+        
+        <div class="cubes"></div>
+        <div class="cube"></div>
+        <div class="header">
+            <div> <h1>P</h1><h1>R</h1><h1>O</h1><h1>D</h1><h1>U</h1>
+                <h1>C</h1><h1>T</h1><h1>S</h1><h1 class="space"></h1></div> <div>
+                    <h1><img src="Images/anotherTest.png" alt=""></h1><h1>A</h1>
+                <h1>N</h1><h1>A</h1><h1>G</h1><h1>E</h1><h1>M</h1>
+                <h1>E</h1><h1>N</h1><h1>T</h1>
+                </div>
+        </div>
+        <div class="inputs">
+            <input type="text" class="title" placeholder="Title">
+            <div class="prices">
+                <input onkeyup="getTotal()" type="number" id="price" placeholder="Price" >
+                <input onkeyup="getTotal()" type="number" id="taxes" placeholder="Taxes" >
+                <input onkeyup="getTotal()" type="number" id="ads" placeholder="Ads" >
+                <input onkeyup="getTotal()" type="number" id="discount" placeholder="Discount" >
+                <span id="total"></span>
+            </div>
+            <input type="number" id="count" placeholder="Count">
+            <input type="text" id="category" placeholder="Category">
+            <button id="create" >Create</button>
+        </div>
+        <div class="outputs">
+            <input type="text" id="search" placeholder="Search">
+            <div class="searchBy">
+                <button id="sbTitle">Search by Title</button>
+                <button id="sbCategory">Search by Category</button>
+            </div>
+            <button id="deleteAll"> Delete All</button>
+            <div class="scrolDiv"><span class="scrollSpan"></span>Scroll down</div>
+            <div class="reload">refresh Data <span class="refrehIcon"></span></div>
+
+            <div class="sticky">
+                <div class="tableContainer">
+                    <table id="mainTable"> 
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Taxes</th>
+                            <th>Ads</th>
+                            <th>Discount</th>
+                            <th>Total</th>
+                            <th>Category</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                        <tbody id="bodyTable">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="BYME">
+            Made With 🤍 By Yassine
+         </div>
+    </div>
+    </div>
+
+    <script src="MainScript.js"></script>
+</body>
+</html>
